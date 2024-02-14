@@ -2114,9 +2114,13 @@ void ios_switchSession(const void* sessionId) {
         }
     }
     
-    if ((currentSession != nil) && (currentSession->context != NULL) && (strcmp(currentSession->context, sessionName) == 0)) {
-        // Already inside this session: do nothing
-        return;
+    if ((currentSession != nil) && (currentSession->context != NULL)) {
+        NSLog(@"ios_switchSession: before strcmp currentSession=%p,currentSession.context=%p,sessionName=%p", currentSession, currentSession->context, sessionName);
+        NSLog(@"ios_switchSession: strcmp currentSession=%s,sessionName=%s", currentSession->context, sessionName);
+        if (strcmp(currentSession->context, sessionName) == 0) {
+            // Already inside this session: do nothing
+            return;
+        }
     }
 
     NSFileManager *fileManager = [[NSFileManager alloc] init];
