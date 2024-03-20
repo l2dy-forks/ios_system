@@ -1,11 +1,11 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 import PackageDescription
 
 _ = Package(
     name: "xcfs",
     platforms: [.macOS("11")],
     dependencies: [
-        .package(url: "https://github.com/blinksh/FMake", from: "0.0.16")
+        .package(url: "https://github.com/l2dy-forks/FMake", revision: "ae9e1cc4f4e755049e6f9c379afb8ce160b3132b")
     ],
     
     targets: [
